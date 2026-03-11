@@ -118,7 +118,7 @@ function calcProjection(depenses, mobilierByMois, cautionByMois, projetsTotal, a
 // ── STYLES ────────────────────────────────────────────────────────────────
 const S = {
   // Layout
-  page:   {flex:1, overflowY:'auto', overflowX:'hidden', WebkitOverflowScrolling:'touch', padding:'12px 12px 80px'},
+  page:   {flex:1, overflowY:'scroll', overflowX:'hidden', WebkitOverflowScrolling:'touch', padding:'12px 12px 80px', height:'100%'},
   card:   {background:'#0f172a', border:'1px solid #1e3a5f', borderRadius:12, overflow:'hidden', marginBottom:12},
   sectHdr:{background:'#0c1628', borderBottom:'1px solid #1e3a5f', padding:'8px 12px', fontSize:11, fontWeight:600, color:'#3b82f6', textTransform:'uppercase', letterSpacing:'.06em'},
   infoBox:{background:'#0c1a2e', border:'1px solid #1e3a5f', borderLeft:'3px solid #3b82f6', borderRadius:6, padding:'10px 12px', fontSize:11, color:'#94a3b8', lineHeight:1.6, marginBottom:12},
@@ -666,7 +666,7 @@ function App() {
     ),
 
     // Content
-    React.createElement('div', {style:{flex:1,overflow:'hidden',position:'relative'}},
+    React.createElement('div', {style:{flex:1,overflow:'hidden',position:'relative',display:'flex',flexDirection:'column'}},
       tab===0 && React.createElement(TabBord,       {depenses, proj}),
       tab===1 && React.createElement(TabDepenses,   {depenses, setDepenses}),
       tab===2 && React.createElement(TabProjection, {depenses, mobilierByMois, cautionByMois, projetsTotal}),
